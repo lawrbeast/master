@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args, prefix) => {
 
+ if (!message.member.hasPermissions ('ADMINISTRATOR')) return
 let voteembed = new Discord.RichEmbed()
 .setColor("RANDOM")
 .setTitle("Voteaza!")
