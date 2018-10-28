@@ -97,6 +97,14 @@ let user;
    message.channel.send({embed:userembed});
   return;
   }
+    if(cmd === `${prefix}avatar`){
+    let user = message.mentions.users.first() || message.author;
+    const avatarembed = new Discord.RichEmbed()
+        .setColor(0xffffff) // This will set the embed sidebar color
+        .setImage(user.avatarURL) // This will set the embed image     
+    message.channel.send({embed:avatarembed});
+        return;
+    }
 //PING
 
 if(cmd === `${prefix}ping`){
