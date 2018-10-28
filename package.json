@@ -1,18 +1,20 @@
 {
   "name": "funnybot",
-  "version": "1.0.0",
-  "description": "Funny Bot :)",
-  "main": "index.js",
+  "description": "Bot",
+  "version": "0.0.1",
+  "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "qLau",
-  "license": "ISC",
-  "dependencies": {
-    "discord.js": "^11.4.2",
-    "fs": "0.0.1-security",
-    "moment": "^2.22.2",
-    "moment-duration-format": "^2.2.2",
-    "ms": "^2.1.1"
-  }
-}
+    "start": "node bot.js"
+    },
+    "dependencies": {
+      "discord.js": "11.1.0",
+      "fs": "0.0.1-security",
+      "unique-random": "2.0.0",
+      "moment": "2.22.1",
+      "memejs": "1.0.7",
+      "ms": "^2.1.1",
+      "gif-search": "^2.0.1",
+      "moment-duration-format": "2.2.2",
+      "request": "2.81.0"
+      }
+     }
