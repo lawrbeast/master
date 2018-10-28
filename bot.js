@@ -67,7 +67,7 @@ if(cmd === `${prefix}serverinfo`){
    .addField("Boți", message.guild.members.filter(m => m.user.bot).size)
    .addField("Online", online.size, true)
    .addField("Roluri", guild.roles.map(roles => `${roles.name}`).join(', '), true)
-   message.channel.send(serverembed);
+   message.channel.send({embed:serverembed});
 return;
 }
 if(cmd === `${prefix}userinfo`){
@@ -95,7 +95,7 @@ let user;
   .addField("Se joaca:", `${user.presence.game ? user.presence.game.name : 'Nimic'}`, true)
   .addField("Roluri:", member.roles.map(roles => `${roles.name}`).join(', '), true)
   .setFooter(`Funny.Minecraft-Romania.Ro | qLau`);
-   message.channel.send(userembed);
+   message.channel.send({embed:userembed});
   return;
   }
 //PING
