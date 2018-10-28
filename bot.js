@@ -28,7 +28,7 @@ bot.on("ready", async () => {
   });
 
 bot.on("guildMemberAdd", member => {
-    member.guild.channels.get('465548001729970196').sendMessage(`:wave: Bun venit pe ${member.guild.name}, ${member}>!\n:black_small_square: IP Server: Funny.Minecraft-Romania.Ro\n:black_small_square: Forum: Minecraft-Romania.Ro`);
+    member.guild.channels.get('465548001729970196').sendMessage(`:wave: Bun venit pe ${member.guild.name}, ${member}!\n:black_small_square: IP Server: Funny.Minecraft-Romania.Ro\n:black_small_square: Forum: Minecraft-Romania.Ro`);
 });
 
 bot.on("message", message => {
