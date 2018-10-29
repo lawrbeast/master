@@ -40,7 +40,7 @@ let msg = message.content.toUpperCase();
 	if(message.member.hasPermission("ADMINISTRATOR")) return;
 	if (msg.includes(`DISCORD.GG`)){
 		message.delete(5000);
-		message.channel.send("**❌ Nu sunt permise link-urile care contin invite catre alt server!**").then(msg => {msg.delete(5000)})
+		message.channel.send("**❌ Nu sunt permise linkurile care contin invite catre alt server!**").then(msg => {msg.delete(5000)})
 		return
 	}	
   const prefix = "funny-";
