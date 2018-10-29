@@ -25,7 +25,7 @@ fs.readdir("./commands", (err, files) => {
 //Bot
 bot.on("ready", async () => {
     console.log(`Legion Guard este online`);
-    bot.user.setPresence({ game: { name: `Funny.Minecraft-Romania.Ro (funny-)`, url: 'https://twitch.tv/qlau234', type: 1 } });
+    bot.user.setPresence({ game: { name: `Funny.Minecraft-Romania.Ro (funny-help)`, url: 'https://twitch.tv/qlau234', type: 1 } });
   });
 
 bot.on("guildMemberAdd", member => {
