@@ -35,10 +35,14 @@ bot.on("guildMemberAdd", member => {
 bot.on("message", (message) => {
 //
 //
-if(message.member.hasPermission("ADMINISTRATOR")) return;
-if (message.content.includes("https://discord.gg/")) {
-	message.delete();	
-}	
+	//ANTI INVITE LINK
+let msg = message.content.toUpperCase();
+	if(message.member.hasPermission("ADMINISTRATOR")) return;
+	if (msg.includes(`DISCORD.GG`)){
+		message.delete(5000);
+		message.channel.send("**❌ Nu sunt permise link-urile care contin invite catre alt server!**").then(msg => {message.delete(2500)});
+		return
+	}	
   const prefix = "funny-";
       let messageArray = message.content.split(" ");
       let cmd = messageArray[0];
