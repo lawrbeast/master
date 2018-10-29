@@ -112,11 +112,13 @@ if(cmd === `${prefix}ping`){
   message.reply("Pong fraiere.")
 } return;
 //Anti invite
-    if(message.content === "discord.gg"){
-        if(message.member.hasPermission("ADMINISTRATOR")) return;
-        message.channel.send("Nu poti trimite invite link-uri pe acest server")
-        message.delete(5000);
-    } retur;
+    let msg = message.content.toUpperCase();
+	    if(message.member.hasPermission("ADMINISTRATOR")) return;
+        if (msg.includes(`DISCORD.GG`)){
+		message.channel.send("Acel link nu este permis!");
+		message.delete(5000);
+		return
+	}
 //
 });
 bot.login(process.env.BOT_TOKEN);
