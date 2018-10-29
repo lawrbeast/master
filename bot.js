@@ -116,7 +116,7 @@ if(cmd === `${prefix}ping`){
 	    if(message.member.hasPermission("ADMINISTRATOR")) return;
         if (msg.includes(`DISCORD.GG`)){
 		message.channel.send("Acel link nu este permis!");
-		message.delete(5000);
+		message.delete();
 		return
 	}
 //
