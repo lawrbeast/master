@@ -1,5 +1,6 @@
-﻿const Discord = require("discord.js");
+const Discord = require("discord.js");
 const bot = new Discord.Client();
+const ms = require("ms");
 const fs = require("fs");
 const moment = require('moment');
 require("moment-duration-format");
@@ -110,6 +111,12 @@ let user;
 if(cmd === `${prefix}ping`){
   message.reply("Pong fraiere.")
 } return;
+//Anti invite
+    if(message.content === "discord.gg"){
+        if(message.member.hasPermission("ADMINISTRATOR")) return;
+        message.channel.send("Nu poti trimite invite link-uri pe acest server")
+        message.delete(5000);
+    } retur;
 //
 });
 bot.login(process.env.BOT_TOKEN);
