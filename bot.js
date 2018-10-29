@@ -101,10 +101,8 @@ let user;
 //ANTI INVITE LINK
 	if(message.member.hasPermission("ADMINISTRATOR")) return;
 if(message.content.toUpperCase().includes(`DISCORD.GG`)){
-		message.channel.send("test");
-		message.delete();
-		return
-	}	
+	message.delete();
+}
     if(cmd === `${prefix}avatar`){
     let user = message.mentions.users.first() || message.author;
     const avatarembed = new Discord.RichEmbed()
