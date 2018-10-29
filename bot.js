@@ -98,6 +98,14 @@ let user;
    message.channel.send({embed:userembed});
   return;
   }
+//ANTI INVITE LINK
+	let msg = message.content.toUpperCase();
+	if(message.member.hasPermission("ADMINISTRATOR")) return;
+if (msg.includes(`DISCORD.GG`)){
+		message.channel.send("**Fără invite link-uri!**");
+		message.delete();
+		return
+	}	
     if(cmd === `${prefix}avatar`){
     let user = message.mentions.users.first() || message.author;
     const avatarembed = new Discord.RichEmbed()
@@ -110,11 +118,5 @@ let user;
 if(cmd === `${prefix}ping`){
   message.reply("Pong fraiere.")
 } return;
-//Anti invite
-    let msg = message.content.toUpperCase();
-	    if(message.member.hasPermission("ADMINISTRATOR")) return;
-       	 	if (msg.includes(`DISCORD.GG`)){
-		message.delete();
-	} return;
 });
 bot.login(process.env.BOT_TOKEN);
