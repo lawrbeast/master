@@ -45,6 +45,12 @@ bot.on("message", message => {
       let commandfile = bot.commands.get(cmd.slice(prefix.length));
       if(commandfile) commandfile.run(bot, message, args);
       if(!message.content.startsWith(`${prefix}`)) return
+	
+//ANTI INVITE LINK
+if(message.member.hasPermission("ADMINISTRATOR")) return;
+if (message.content.includes("https://discord.gg/")) {
+	message.delete();	
+}
 //
 if(cmd === `${prefix}serverinfo`){
    let online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
@@ -98,12 +104,6 @@ let user;
    message.channel.send({embed:userembed});
   return;
   }
-//ANTI INVITE LINK
-	if(message.member.hasPermission("ADMINISTRATOR")) return;
-if (message.content.includes("https://discord.gg/")) {
-	message.delete();
-	
-}
     if(cmd === `${prefix}avatar`){
     let user = message.mentions.users.first() || message.author;
     const avatarembed = new Discord.RichEmbed()
