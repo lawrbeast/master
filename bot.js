@@ -107,18 +107,14 @@ let user;
         return;
     }
 //PING
-
 if(cmd === `${prefix}ping`){
   message.reply("Pong fraiere.")
 } return;
 //Anti invite
     let msg = message.content.toUpperCase();
 	    if(message.member.hasPermission("ADMINISTRATOR")) return;
-        if (msg.includes(`DISCORD.GG`)){
-		message.channel.send("Acel link nu este permis!");
+       	 	if (msg.includes(`DISCORD.GG`)){
 		message.delete();
-		return
-	}
-//
+	} return;
 });
 bot.login(process.env.BOT_TOKEN);
