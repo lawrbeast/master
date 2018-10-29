@@ -39,7 +39,7 @@ bot.on("message", (message) => {
 let msg = message.content.toUpperCase();
 	if(message.member.hasPermission("ADMINISTRATOR")) return;
 	if (msg.includes(`DISCORD.GG`)){
-		message.delete(5000);
+		message.delete();
 		message.channel.send("**❌ Nu sunt permise linkurile care contin invite catre alt server!**").then(msg => {msg.delete(5000)})
 		return
 	}	
