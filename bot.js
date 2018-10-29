@@ -99,10 +99,9 @@ let user;
   return;
   }
 //ANTI INVITE LINK
-	let msg = message.content.toUpperCase();
 	if(message.member.hasPermission("ADMINISTRATOR")) return;
-if (msg.includes(`DISCORD.GG`)){
-		message.channel.send("**Fără invite link-uri!**");
+if(message.content.toUpperCase().includes(`DISCORD.GG`)){
+		message.channel.send("test");
 		message.delete();
 		return
 	}	
