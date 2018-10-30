@@ -29,7 +29,7 @@ bot.on("ready", async () => {
   });
 
 bot.on("guildMemberAdd", member => {
-    let online = member.guild.members.filter(member => member.user.presence.status !== 'offline');
+    let online = member.guild.members.filter(member => member.user.presence.status.size !== 'offline');
     member.guild.channels.get('506876508808151086').setName(`Membrii Totali: ${member.guild.memberCount}`);
     member.guild.channels.get('506876596624424981').setName(`Boti: ${member.guild.members.filter(m => m.user.bot).size}`);
     member.guild.channels.get('506876550671499268').setName(`Membrii Online: ${online}`);
