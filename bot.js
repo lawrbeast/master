@@ -32,7 +32,6 @@ bot.on("guildMemberAdd", member => {
     let online = member.guild.members.filter(member => member.user.presence.status !== 'offline'.size);
     member.guild.channels.get('506876508808151086').setName(`Membrii Totali: ${member.guild.memberCount}`);
     member.guild.channels.get('506876596624424981').setName(`Boti: ${member.guild.members.filter(m => m.user.bot).size}`);
-    member.guild.channels.get('506876550671499268').setName(`Forum: minecraft-romania.ro/forum`);
     member.guild.channels.get('465548001729970196').sendMessage(`:wave: Bun venit pe ${member.guild.name}, ${member}\n:black_small_square: IP Server: Funny.Minecraft-Romania.Ro\n:black_small_square: Forum: https://minecraft-romania.ro/forum/`)
 });
 
