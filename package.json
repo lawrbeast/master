@@ -12,6 +12,7 @@
       "unique-random": "2.0.0",
       "moment": "2.22.1",
       "memejs": "1.0.7",
+      "quick.db": "7.0.0-b15",
       "ms": "^2.1.1",
       "gif-search": "^2.0.1",
       "moment-duration-format": "2.2.2",
