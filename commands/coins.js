@@ -9,8 +9,9 @@ coins = args[1]
 db.add('userInfo.balance', coins)
 }
 if(args[0] === "stats"){
-message.channel.send(${db.get('userInfo.balance')});
+message.channel.send(db.get('userInfo.balance'));
 }
+  
 }
 
 exports.help = {
