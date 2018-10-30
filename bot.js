@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const ms = require("ms");
 const fs = require("fs");
+const db = require("quick.db");
 const moment = require('moment');
 require("moment-duration-format");
 bot.commands = new Discord.Collection();
