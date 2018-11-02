@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
 
 
     // Define our embed
-    const embed = new RichEmbed()
+    const embed = new Discord.RichEmbed()
         .setColor(role.hexColor)
         .setTitle(`Role: ${role.name}`)
         .addField('Members', role.members.size, true)
