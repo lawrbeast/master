@@ -12,7 +12,7 @@ exports.run = (bot, message, args) => {
     if (!aRole) return message.reply(`I can't find the role.`);
 
     if (rMember.roles.has(aRole.id)) return message.reply("The user already have this role!");
-    await (rMember.addRole(aRole.id))
+    (rMember.addRole(aRole.id))
 
 }
 
