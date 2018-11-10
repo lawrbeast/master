@@ -29,13 +29,6 @@ bot.on("ready", async () => {
     bot.user.setPresence({ game: { name: `Funny.Minecraft-Romania.Ro (funny-help)`, url: 'https://twitch.tv/qlau234', type: 1 } });
   });
 
-bot.on("guildMemberAdd", member => {
-    member.guild.channels.get('506876508808151086').setName(`Membrii Totali: ${member.guild.memberCount}`);
-    member.guild.channels.get('506882602808901632').setName(`Membrii: ${member.guild.members.filter(m => !m.user.bot).size}`)
-    member.guild.channels.get('506884124779347978').setName(`Boti: ${member.guild.members.filter(m => m.user.bot).size}`);
-    member.guild.channels.get('465548001729970196').sendMessage(`:wave: Bun venit pe ${member.guild.name}, ${member}\n:black_small_square: IP Server: Funny.Minecraft-Romania.Ro\n:black_small_square: Forum: https://minecraft-romania.ro/forum/`)
-});
-
 bot.on("message", (message) => {
 //
   const prefix = "funny-";
