@@ -12,9 +12,11 @@
       "unique-random": "2.0.0",
       "moment": "2.22.1",
       "memejs": "1.0.7",
-      "quick.db": "7.0.0-b15",
+      "ffmpeg-binaries": "^4.0.0",
       "ms": "^2.1.1",
       "weather-js": "^2.0.0",
+      "ytdl-core": "^0.28.0",
+      "node-opus": "^0.3.1",
       "gif-search": "^2.0.1",
       "moment-duration-format": "2.2.2",
       "request": "2.81.0"
