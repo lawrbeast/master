@@ -2,7 +2,8 @@ const Discord = require('discord.js');
 const search = require('yt-search');
 
 exports.run = (bot, message, args) => {
-
+  if (message.author.id !== "257491128671141888") return message.channel.send("Nu te pot lasa bosule, inca comenzile astea sunt in lucru.");
+  
   search(args.join(' '), function(err, res) {
     if (err) return message.channel.send('Ceva a mers prost.')
     let videos = res.videos.slice(0, 10);
