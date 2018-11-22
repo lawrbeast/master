@@ -5,6 +5,7 @@ const search = require('yt-search');
 const Discord = require("discord.js");
 
 exports.run = async (bot, message, args, ops) => {
+  if (message.author.id !== "257491128671141888") return message.channel.send("Nu te pot lasa bosule, inca comenzile astea sunt in lucru.");
   let validate = ytdl.validateURL(args[0]);
   if (!validate) {
     let commandFile = require('./search.js')
