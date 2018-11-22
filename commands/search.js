@@ -19,7 +19,7 @@ exports.run = (bot, message, args) => {
     .setThumbnail('https://fitness-aalsmeer.nl/wp-content/uploads/2016/09/icoon-play-Fitness-Aalsmeer-300x225.png')
     .setAuthor(message.author.username, sicon)
     .setDescription(resp)
-    message.channel.send(respembed);
+    message.channel.send({embed:respembed});
 
     const filter = m => !isNaN(m.content) && m.content < videos.length+1 && m.content > - 0;
     const collector = message.channel.createMessageCollector(filter);
