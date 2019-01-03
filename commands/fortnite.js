@@ -20,8 +20,7 @@ module.exports.run = async (bot, message, args) => {
         let kills = lifetime[10]['Kills'];
         let kd = lifetime[11]['K/d'];
         let embed = new Discord.RichEmbed()
-        .setTitle("Fortnite Stats")
-        .setAuthor(data.username, 'https://i.ytimg.com/vi/XawDu3kJ6Pg/maxresdefault.jpg')
+        .setAuthor('Fortnite Game Tracker', 'https://i.ytimg.com/vi/XawDu3kJ6Pg/maxresdefault.jpg')
         .setColor("#111111")
         .addField("Wins", wins, true)
         .addField("Kills", kills, true)
