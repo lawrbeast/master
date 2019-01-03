@@ -11,12 +11,12 @@ exports.run = (bot, message, args) => {
       resp += `**[${parseInt(i)+1}]:** \`${videos[i].title} - [${videos[i].timestamp}]\`\n`;
     }
 
-    resp += `\n\`\`Alege un numar intre 1-${videos.length}\`\``;
+    resp += `\n\`\`Choose a number between 1-${videos.length}\`\``;
     let sicon = message.author.avatarURL;
     const respembed = new Discord.RichEmbed()
-    .setColor('#34373d')
-    .setTitle(`Results for: ${args.join(' ')}`)
-    .setThumbnail('https://us.123rf.com/450wm/uasumy/uasumy1709/uasumy170900023/86140858-letter-m-logo-modern-monogram-paper-ribbon-material-design-style-identity-initial-emblem-mockup-over.jpg?ver=6')
+    .setColor('#cc0000')
+    .setTitle(`Rezultate pentru ${args.join(' ')}`)
+    .setThumbnail('https://fitness-aalsmeer.nl/wp-content/uploads/2016/09/icoon-play-Fitness-Aalsmeer-300x225.png')
     .setAuthor(message.author.username, sicon)
     .setDescription(resp)
     message.channel.send({embed:respembed});
