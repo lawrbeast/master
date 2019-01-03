@@ -8,7 +8,7 @@ exports.run = async (client, message, args, tools) => {
     .setColor('#111111')
     .setTitle("Here is your image!")
     .setImage(body.message)
-    message.channel.send({embed})
+    message.channel.send({embed:embed})
     
 
 }
