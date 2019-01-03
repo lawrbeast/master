@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
         let embed = new Discord.RichEmbed()
         .setTitle("Fortnite Stats")
         .setAuthor(data.username)
-        .setColor("RANDOM")
+        .setColor("#111111")
         .addField("Wins", wins, true)
         .addField("Kills", kills, true)
         .addField("Score", score, true)
