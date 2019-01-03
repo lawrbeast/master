@@ -14,7 +14,7 @@ exports.run = (bot, message, args) => {
     resp += `\n\`\`Choose a number between 1-${videos.length}\`\``;
     let sicon = message.author.avatarURL;
     const respembed = new Discord.RichEmbed()
-    .setColor('#cc0000')
+    .setColor('#111111')
     .setTitle(`Results for: ${args.join(' ')}`)
     .setThumbnail('https://fitness-aalsmeer.nl/wp-content/uploads/2016/09/icoon-play-Fitness-Aalsmeer-300x225.png')
     .setAuthor(message.author.username, sicon)
