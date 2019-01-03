@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
     let platform = args[1];
 
     if(!username) return message.channel.send("Please mention a player! (Fortnite)")
-    if(!platform) return message.channel.send('Usage: **!fortnite <username> <platform>**')
+    if(!platform) return message.channel.send('Usage: **$fortnite <username> <platform>**')
 
     let data = fortnite.user(username, platform).then(data => {
         let stats = data.stats;
@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
 
         message.channel.send(embed);
     }).catch((err) => {
-      message.channel.send('I coudn\'t find the user!'); return;
+      message.channel.send('I couldn\'t find the user!'); return;
       console.error(err);
     });
 }
