@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const ms = require("ms");
+let cooldown = new Set();
+let cdseconds = 5;
 const fs = require("fs");
 const moment = require('moment');
 require("moment-duration-format");
@@ -31,6 +33,13 @@ bot.on("ready", async () => {
 bot.on("message", (message) => {
 //
   const prefix = "$";
+        if(!message.content.startsWith(prefix)) return;
+    if(cooldown.has(message.author.id)){
+      return message.channel.send('Asteapta 5 secunde pentru a folosii din nou acea comanda.')
+    }
+  //  if(!message.member.hasPermission("ADMINISTRATOR")){
+      cooldown.add(message.author.id)
+  //  }
       let messageArray = message.content.split(" ");
       let cmd = messageArray[0];
       let sender = message.author;
@@ -40,6 +49,9 @@ bot.on("message", (message) => {
       let commandfile = bot.commands.get(cmd.slice(prefix.length));
       if(commandfile) commandfile.run(bot, message, args);
       if(!message.content.startsWith(`${prefix}`)) return
+        setTimeout(() => {
+      cooldown.delete(message.author.id)
+    }, cdseconds * 1000)
 //
 if(cmd === `${prefix}serverinfo`){
    let online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
