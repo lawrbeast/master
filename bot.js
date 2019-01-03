@@ -48,21 +48,22 @@ if(cmd === `${prefix}serverinfo`){
    let year = message.guild.createdAt.getFullYear()
    let sicon = message.guild.iconURL;
    let guild = message.guild
-   let serverembed = new Discord.RichEmbed()
+   let embed = new Discord.RichEmbed()
    .setAuthor(message.guild.name, sicon)
-   .setFooter(`Created at • ${day}.${month}.${year}`)
+   .setFooter(`Creat pe • ${day}.${month}.${year}`)
    .setColor("#0a9678")
    .setThumbnail(sicon)
    .addField("ID", message.guild.id, true)
-   .addField("Guild Nme", message.guild.name, true)
+   .addField("Name", message.guild.name, true)
    .addField("Owner", message.guild.owner.user.tag, true)
-   .addField("Region", message.guild.region, true)
-   .addField("Channels", message.guild.channels.size, true)
+   .addField("Regiune", message.guild.region, true)
+   .addField("Canale", message.guild.channels.size, true)
    .addField("Members", message.guild.memberCount, true)
-   .addField("Bots", message.guild.members.filter(m => m.user.bot).size)
+   .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
+   .addField("Bots", message.guild.members.filter(m => m.user.bot).size, true)
    .addField("Online", online.size, true)
-   .addField("Roles", guild.roles.map(roles => `${roles.name}`).join(', '), true)
-   message.channel.send({embed:serverembed});
+   .addField(`Roles [${message.guild.roles.size}]`, `To see a list with all server roles use o!roles`)
+   message.channel.send({embed});
 return;
 }
 if(cmd === `${prefix}userinfo`){
