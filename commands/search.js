@@ -15,7 +15,7 @@ exports.run = (bot, message, args) => {
     let sicon = message.author.avatarURL;
     const respembed = new Discord.RichEmbed()
     .setColor('#cc0000')
-    .setTitle(`Rezultate pentru ${args.join(' ')}`)
+    .setTitle(`Results for: ${args.join(' ')}`)
     .setThumbnail('https://fitness-aalsmeer.nl/wp-content/uploads/2016/09/icoon-play-Fitness-Aalsmeer-300x225.png')
     .setAuthor(message.author.username, sicon)
     .setDescription(resp)
