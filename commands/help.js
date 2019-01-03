@@ -1,12 +1,14 @@
 const Discord = require("discord.js");
 
 module.exports.run = (bot, message, args) => {
-
+let sicon = bot.user.displayAvatarURL;
 let helpembed = new Discord.RichEmbed()
-.setColor("#cc0000")
-.setTitle("Funny.Minecraft-Romania.Ro")
-.setDescription("funny-sula - masoara-ti sula pe chat\nfunny-avatar - iti arata avatarul tau sau al unui membru\nfunny-serverinfo - iti arata informatiile despre server\nfunny-userinfo <@user> - iti arata informatiile unui user\n\n**Music**\nfunny-play <link> pune o melodie (trebuie sa te conectezi pe voice channel)\nfunny-disconnect - opreste botul")
-.setFooter("Funny.Minecraft-Romania.Ro | qLau ©")
+.setColor("#111111")
+.setAuthor('Master Commands', sicon)
+.addField('Fun Commands', '$emojify [text] - transform a text into emoji\n$meme - gives you a nice juicy meme\n$cat - gives you a cat image :cat:\n$dog- gives you a dog image :dog:\n$gif [gifname] - search a gif\n$avatar - gives your avatar\n')
+.addField('Moderation Commands', '$ban [@user] - ban a user\n$kick [@user] - kick a user\n$mute [@user] [time 1s,1m,1h,1d]- mute a user\n$serverinfo - gives you server information\n$roleinfo [@role] - gives you information about a specified role\n$userinfo - gives you information about a specified user\n$clear [0-100] - clear a number of messages\n')
+.addField('Music Commands', '$play [link or name] - play a song\n$disconnect - stop the bot')
+.addField('Game Trackers', '$fortnite [name] [platform] - gives you information about a specified Fortnite player\n$csgo [customURL] - gives you information about a specified CS GO player\n$osu [name] - gives you information about a specified OSU! player')
 message.channel.send({embed:helpembed})
 }
 
