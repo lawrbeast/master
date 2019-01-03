@@ -35,7 +35,7 @@ bot.on("message", (message) => {
   const prefix = "$";
         if(!message.content.startsWith(prefix)) return;
     if(cooldown.has(message.author.id)){
-      return message.channel.send('Asteapta 5 secunde pentru a folosii din nou acea comanda.')
+      return message.channel.send('You have to wait 5 seconds between commands.')
     }
   //  if(!message.member.hasPermission("ADMINISTRATOR")){
       cooldown.add(message.author.id)
