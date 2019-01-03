@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = (bot, message, args) => {
  //!clear 15
  let mspEmbed = new Discord.RichEmbed()
- .setDescription("❌ You don't have permission.")
+ .setDescription("✖ You don't have permission.")
  .setColor("#bc2731")
  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send({embed:mspEmbed});
  if(!args[0]) return message.channel.send("Please specify a number of messages that you want to delete.")
