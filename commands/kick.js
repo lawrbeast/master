@@ -4,6 +4,7 @@ module.exports.run =  (bot, message, args) => {
         let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         let kEmbed = new Discord.RichEmbed()
         .setTitle('Command: $kick')
+        .setColor('#111111')
         .setDescription('**Description:** Kick a user\n**Usage:** $kick [@user] [reason]\n**Example:** $kick [@qLau] reason-optional')
         if(!kUser) return message.channel.send({embed:kEmbed})
         if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("You don't have enough permission.");
