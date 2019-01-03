@@ -9,6 +9,8 @@ exports.run = async (client, message, args, tools) => {
     .setTitle("Here is your image!")
     .setImage(body.message)
     message.channel.send({embed:embed})
-    
-
+   
+}
+exports.help = {
+    name: "dog"
 }
