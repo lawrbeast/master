@@ -25,12 +25,12 @@ fs.readdir("./commands", (err, files) => {
 //Bot
 bot.on("ready", async () => {
     console.log(`Legion Guard este online`);
-    bot.user.setPresence({ game: { name: `Funny.Minecraft-Romania.Ro (funny-help)`, url: 'https://twitch.tv/qlau234', type: 1 } });
+    bot.user.setPresence({ game: { name: `Mastering ${bot.user.size} users`, url: 'https://twitch.tv/qlau234', type: 1 } });
   });
 
 bot.on("message", (message) => {
 //
-  const prefix = "funny-";
+  const prefix = "$";
       let messageArray = message.content.split(" ");
       let cmd = messageArray[0];
       let sender = message.author;
@@ -54,14 +54,14 @@ if(cmd === `${prefix}serverinfo`){
    .setColor("#0a9678")
    .setThumbnail(sicon)
    .addField("ID", message.guild.id, true)
-   .addField("Nume", message.guild.name, true)
-   .addField("Deținător", message.guild.owner.user.tag, true)
-   .addField("Regiune", message.guild.region, true)
-   .addField("Canale", message.guild.channels.size, true)
-   .addField("Membrii", message.guild.memberCount, true)
-   .addField("Boți", message.guild.members.filter(m => m.user.bot).size)
+   .addField("Guild Nme", message.guild.name, true)
+   .addField("Owner", message.guild.owner.user.tag, true)
+   .addField("Region", message.guild.region, true)
+   .addField("Channels", message.guild.channels.size, true)
+   .addField("Members", message.guild.memberCount, true)
+   .addField("Bots", message.guild.members.filter(m => m.user.bot).size)
    .addField("Online", online.size, true)
-   .addField("Roluri", guild.roles.map(roles => `${roles.name}`).join(', '), true)
+   .addField("Roles", guild.roles.map(roles => `${roles.name}`).join(', '), true)
    message.channel.send({embed:serverembed});
 return;
 }
@@ -83,13 +83,13 @@ let user;
   .setTitle(`${user.username}#${user.discriminator}`)
   .addField("ID:", `${user.id}`, true)
   .addField("Nickname:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
-  .addField("Creat pe", `${moment.utc(user.createdAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
-  .addField("A intrat pe:", `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
+  .addField("Created at:", `${moment.utc(user.createdAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
+  .addField("Joined at:", `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
   .addField("Bot:", `${user.bot}`, true)
   .addField("Status:", `${user.presence.status}`, true)
-  .addField("Se joaca:", `${user.presence.game ? user.presence.game.name : 'Nimic'}`, true)
-  .addField("Roluri:", member.roles.map(roles => `${roles.name}`).join(', '), true)
-  .setFooter(`Funny.Minecraft-Romania.Ro | qLau`);
+  .addField("Playing:", `${user.presence.game ? user.presence.game.name : 'nothing'}`, true)
+  .addField("Roles:", member.roles.map(roles => `${roles.name}`).join(', '), true)
+  .setFooter(`Master`);
    message.channel.send({embed:userembed});
   return;
   }
@@ -101,9 +101,5 @@ let user;
     message.channel.send({embed:avatarembed});
         return;
     }
-//PING
-if(cmd === `${prefix}ping`){
-  message.reply("Pong fraiere.")
-} return;
 });
 bot.login(process.env.BOT_TOKEN);
