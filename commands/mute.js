@@ -41,7 +41,7 @@ module.exports.run = async (bot, message, args) => {
     message.delete().catch(O_o => {});
 
     let muteEmbed = new Discord.RichEmbed()
-    .setDescription(`Mute - Case | ${tomute}`)
+    .setAuthor('Action: Mute', 'https://www.pngrepo.com/download/240070/mute.png')
     .setColor("#111111")
     .addField("User", tomute, true)
     .addField("Moderator", message.author, true)
