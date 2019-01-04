@@ -27,7 +27,7 @@ fs.readdir("./commands", (err, files) => {
 //Bot
 bot.on("ready", async () => {
     console.log(`Legion Guard este online`);
-    bot.user.setPresence({ game: { name: `Mastering ${bot.users.size} users ($)`, url: 'https://twitch.tv/qlau234', type: 1 } });
+    bot.user.setPresence({ activity: { name: `Mastering ${bot.users.size} users ($)`, url: 'https://twitch.tv/qlau234', type: 1 } });
   });
 
 bot.on("message", (message) => {
