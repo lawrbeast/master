@@ -26,8 +26,8 @@ fs.readdir("./commands", (err, files) => {
 });
 //Bot
 bot.on("ready", async () => {
-    console.log(`Legion Guard este online`);
-    bot.user.setActivity(`Mastering ${bot.users.size}`, 'https://www.twitch.tv/qlau235')
+    console.log(`Master i'm online!`);
+    bot.user.setPresence({ game: { name: `Mastering ${bot.users.size} users`, url: 'https://twitch.tv/qlau235', type: 1 } });
   });
 
 bot.on("message", (message) => {
@@ -91,7 +91,7 @@ let user;
 
 //Discord rich embed
   const userembed = new Discord.RichEmbed()
-  .setColor('RANDOM')
+  .setColor('#111111')
   .setThumbnail(user.avatarURL)
   .setTitle(`${user.username}#${user.discriminator}`)
   .addField("ID:", `${user.id}`, true)
