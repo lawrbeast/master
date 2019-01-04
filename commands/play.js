@@ -15,11 +15,11 @@ exports.run = async (bot, message, args, ops) => {
 
     let connection = await message.member.voiceChannel.join();
     let info = await ytdl.getInfo(args[0]);
-    let dispatcher = await connection.playStream﻿(ytdl(args[0], { filter: 'audioonly'  }));
+    let dispatcher = await connection.playStream(ytdl(args[0], { filter: 'audioonly'  }));
   let pembed = new Discord.RichEmbed()
   .setColor('#111111')
   .setDescription(`Now playing: ${info.title}`)
-        message.channel.send({embed:playembed});
+        message.channel.send({embed:pembed});
 
         dispatcher.on('end', () => {
             message.guild.me.voiceChannel.leave();
