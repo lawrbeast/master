@@ -27,7 +27,7 @@ fs.readdir("./commands", (err, files) => {
 //Bot
 bot.on("ready", async () => {
     console.log(`Legion Guard este online`);
-    bot.user.setPresence({ game: { name: `Mastering ${bot.users.size} users`, url: 'https://twitch.tv/qlau234', type: 1 } });
+    bot.user.setPresence({ game: { name: `Mastering ${bot.users.size} users ($)`, url: 'https://twitch.tv/qlau234', type: 1 } });
   });
 
 bot.on("message", (message) => {
@@ -37,9 +37,9 @@ bot.on("message", (message) => {
     if(cooldown.has(message.author.id)){
       return message.channel.send('You have to wait 5 seconds between commands.')
     }
-  //  if(!message.member.hasPermission("ADMINISTRATOR")){
+  if(!message.member.hasPermission("ADMINISTRATOR")){
       cooldown.add(message.author.id)
-  //  }
+  }
       let messageArray = message.content.split(" ");
       let cmd = messageArray[0];
       let sender = message.author;
@@ -102,17 +102,8 @@ let user;
   .addField("Status:", `${user.presence.status}`, true)
   .addField("Playing:", `${user.presence.game ? user.presence.game.name : 'nothing'}`, true)
   .addField("Roles:", member.roles.map(roles => `${roles.name}`).join(', '), true)
-  .setFooter(`Master`);
    message.channel.send({embed:userembed});
   return;
   }
-    if(cmd === `${prefix}avatar`){
-    let user = message.mentions.users.first() || message.author;
-    const avatarembed = new Discord.RichEmbed()
-        .setColor(0xffffff) // This will set the embed sidebar color
-        .setImage(user.avatarURL) // This will set the embed image     
-    message.channel.send({embed:avatarembed});
-        return;
-    }
 });
 bot.login(process.env.BOT_TOKEN);
