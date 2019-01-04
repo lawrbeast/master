@@ -27,7 +27,7 @@ fs.readdir("./commands", (err, files) => {
 //Bot
 bot.on("ready", async () => {
     console.log(`Master i'm online!`);
-    bot.user.setPresence({ game: { name: `Mastering ${bot.users.size} users`, url: 'https://twitch.tv/qlau235', type: 1 } });
+    bot.user.setPresence({ game: { name: `Mastering ${bot.users.size} users ($)`, url: 'https://twitch.tv/qlau235', type: 1 } });
   });
 
 bot.on("message", (message) => {
