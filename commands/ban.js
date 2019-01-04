@@ -13,7 +13,7 @@ module.exports.run = (bot, message, args) => {
   if(!bReason) bReason = "no reason"
 
   let banEmbed = new Discord.RichEmbed()
-  .setDescription(`Ban - Case | ${bUser}`)
+  .setAuthor('Action: Ban', 'http://pltc.sbu.ac.ir/wp-content/uploads/2016/11/lawsandrules.png')
   .setColor("#111111")
   .addField("User", bUser, true)
   .addField("Moderator", message.author.username, true)
