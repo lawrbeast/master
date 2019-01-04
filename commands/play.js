@@ -19,7 +19,7 @@ exports.run = async (bot, message, args, ops) => {
             filter: 'audioonly'
         }));
   let playembed = new Discord.RichEmbed()
-  .setColor('#cc0000')
+  .setColor('#111111')
   .setDescription(`Now playing: ${info.title}`)
         message.channel.send({embed:playembed});
   
