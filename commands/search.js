@@ -22,7 +22,7 @@ exports.run = (bot, message, args) => {
     message.channel.send({embed:respembed});
 
     const filter = m => !isNaN(m.content) && m.content < videos.length+1 && m.content > - 0;
-    const collector = message.channel.createMessageCollector(filter, {max: 1, time: 5000});
+    const collector = message.channel.createMessageCollector(filter, {max: 1, time: 10000});
 
     collector.videos = videos;
     collector.once('collect', function(m) {
