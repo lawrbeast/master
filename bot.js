@@ -7,8 +7,6 @@ const fs = require("fs");
 const moment = require('moment');
 require("moment-duration-format");
 bot.commands = new Discord.Collection();
-const DBL = require("dblapi.js");
-const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUzMDQyNDQ4MTQ0NjEwMTAyMiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTQ2NzE5NTcyfQ.LhqkfRCksuyJzDwCpKjVw_Rei011JhGjC0V8C7Yv-Mg', bot);
 //CMD HANDLER
 fs.readdir("./commands", (err, files) => {
 
@@ -32,10 +30,6 @@ fs.readdir("./commands", (err, files) => {
 bot.on("ready", async () => {
     console.log(`Master i'm online!`);
   });
-dbl.on('vote', vote => {
-  let voteChannel = bot.channels.get("531203891233292289");
-  voteChannel.send('${vote.user} just voted Master! Thank you!')
-});
 
 bot.on('guildMemberAdd', member => {
     bot.user.setPresence({ game: { name: `Mastering ${bot.users.size} users in ${bot.guilds.size} servers ($)`, url: 'https://twitch.tv/qlau235', type: 1 } });
