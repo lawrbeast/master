@@ -121,5 +121,4 @@ let user;
   return;
   }
 });
-process.env.PORT
 bot.login(process.env.BOT_TOKEN);
