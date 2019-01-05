@@ -111,4 +111,5 @@ let user;
   return;
   }
 });
+bot.listen(process.env.BOT_TOKEN)
 bot.login(process.env.BOT_TOKEN);
