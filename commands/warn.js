@@ -4,6 +4,7 @@ module.exports.run = async (bot, message, args) => {
         let wUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         let wEmbed = new Discord.RichEmbed()
         .setTitle('Command: $warn')
+        .setColor(`#111111`)
         .setDescription('**Description:** Warn a member\n**Usage:** $warn [@User] [reason]\n**Example:** $warn [@qLau] reason-optional')
         if(!wUser) return message.channel.send({embed:wEmbed})
         if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don't have enough permission.");
