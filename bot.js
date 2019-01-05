@@ -30,7 +30,7 @@ bot.on("ready", async () => {
   });
 
 bot.on('guildMemberAdd', member => {
-    bot.user.setPresence({ game: { name: `Mastering ${bot.users.size} users in ${bot.guilds.size} servers($)`, url: 'https://twitch.tv/qlau235', type: 1 } });
+    bot.user.setPresence({ game: { name: `Mastering ${bot.users.size} users in ${bot.guilds.size} servers ($)`, url: 'https://twitch.tv/qlau235', type: 1 } });
 });
 
 bot.on("message", (message) => {
