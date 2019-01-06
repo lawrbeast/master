@@ -49,15 +49,23 @@ module.exports.run = async (bot, message, args) => {
     .setTimestamp(new Date());
 
     let incidentschannel = message.guild.channels.find(`name`, "logs");
+      let mutedEmbed = new Discord.RichEmbed()
+    .setColor('#111111')
+    .addField(`You are now muted on: ${message.guild.name}`, `**Duration:** ${mutetime}\n**Reason:** ${reason}\n**Muted by:** ${message.author}`)
+    tomute.send({embed:mutedEmbed})
     if (!incidentschannel){
       await (tomute.addRole(muterole.id));
+       tomute.send(`You are now muted on: ${message.guild.name}\nDuration: ${mutetime}\nReason: ${reason}`)
     } else {
     incidentschannel.send({embed:muteEmbed});
   }
 
     setTimeout(function() {
         tomute.removeRole(muterole.id);
-        tomute.send(`You are now unmuted on: ${message.guild.name}`)
+        let unmutedEmbed = new Discord.RichEmbed()
+        .setColor('#111111')
+        .setDescription(`You are now unmuted on guild: ${message.guild.name}`)
+        tomute.send({embed:unmutedEmbed})
     }, ms(mutetime));
 }
 exports.help = {
