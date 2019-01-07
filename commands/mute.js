@@ -57,6 +57,7 @@ module.exports.run = async (bot, message, args) => {
       await (tomute.addRole(muterole.id));
        tomute.send(`You are now muted on: ${message.guild.name}\nDuration: ${mutetime}\nReason: ${reason}`)
     } else {
+     await (tomute.addRole(muterole.id));    
     incidentschannel.send({embed:muteEmbed});
   }
 
