@@ -27,6 +27,7 @@ module.exports.run =  (bot, message, args) => {
           message.guild.member(kUser).kick(kReason)
           return
         } else {
+        message.guild.member(kUser).kick(kReason)        
         kickChannel.send({embed:kickEmbed});
       }
     }
