@@ -24,6 +24,7 @@ module.exports.run = (bot, message, args) => {
   if(!banchannel){
   message.guild.member(bUser).ban(bReason);
 } else {
+  message.guild.member(bUser).ban(bReason);
   banchannel.send({embed:banEmbed});
 }
 }
