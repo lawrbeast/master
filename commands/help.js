@@ -10,7 +10,7 @@ let helpembed = new Discord.RichEmbed()
 .addField('Music Commands', '$play [link or name] - play a song\n$disconnect - stop the bot\nMaster can\'t queue songs YET.')
 .addField('Game Trackers', '$fortnite [name] [platform] - gives you information about a specified Fortnite player\n$csgo [customURL] - gives you information about a specified CS GO player\n$osu [name] - gives you information about a specified OSU! player')
 .addField('Help Master with a vote!', '$vote - gives you the vote link (powered by discordbots.org)\n$invite - gives you the invite link')
-.setFooter('Need help? Look here: masterbot.glitch.me')
+.setFooter('Need help? Look here: masterweb.glitch.me')
 message.author.send({embed:helpembed})
   message.channel.send('Check your DM\'s.')
 }
