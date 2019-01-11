@@ -32,22 +32,6 @@ bot.on("ready", async () => {
     console.log(`Master i'm online!`);
   });
 
-bot.on('guildCreate', async guild => {
-    const invite = await guild.channels.find(c => c.type !== "category" && c.position === 0).createInvite({
-        maxAge: 0
-    });
-    let channel = bot.channels.get('533331553036664833');
-    let joinEmbed = new Discord.RichEmbed()
-        .setTitle("Master joined in a new server! Check it out!")
-        .setThumbnail(guild.iconURL)
-        .addField(`Server Name:`, `${guild.name}`)
-        .addField(`Server ID:`, `${guild.id}`)
-        .addField(`Server Owner:`, `${guild.owner}`)
-        .setColor("#111111")
-        .setTimestamp();
-    channel.send({ embed: joinEmbed });
-});
-
 bot.on('guildMemberAdd', member => {
     bot.user.setPresence({ game: { name: `Mastering ${bot.users.size} users in ${bot.guilds.size} servers ($)`, url: 'https://twitch.tv/qlau235', type: 1 } });
 });
